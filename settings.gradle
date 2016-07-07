@@ -1,3 +1,4 @@
 rootProject.name = 'elf-java'
 include 'statistics'
+include 'crud'
 
