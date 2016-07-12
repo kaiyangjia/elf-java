@@ -11,8 +11,8 @@ sourceSets{
 
 dependencies {
     // lib Dependencies
-    compile "com.google.guava:guava:$rootProject.guavaVersion"
-    compile "org.apache.commons:commons-lang3:$rootProject.commonsLang3Version"
+    compile "com.google.guava:guava:$rootProject.ext.guavaVersion"
+    compile "org.apache.commons:commons-lang3:$rootProject.ext.commonsLang3Version"
 
     // Dependencies for local unit tests
     testCompile "junit:junit:$rootProject.ext.junitVersion"

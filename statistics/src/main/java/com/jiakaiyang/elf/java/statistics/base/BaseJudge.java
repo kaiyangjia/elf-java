@@ -2,10 +2,14 @@ package com.jiakaiyang.elf.java.statistics.base;
 
 import java.util.Collection;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * 判断基本类型
  */
 public class BaseJudge<T> implements Judge<T>{
+    @Setter @Getter
     private T standard;
     private Collection<T> standardCollection;
     //用于比较对象大小所依据的对象的成员名称
