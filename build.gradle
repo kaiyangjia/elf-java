@@ -10,9 +10,17 @@ sourceCompatibility = 1.5
 allprojects {
     repositories {
         jcenter()
+        mavenCentral()
     }
 }
 
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+// Define versions in a single place
+ext {
+    //lib dependencies
+    commonsLang3Version = '3.1'
+    guavaVersion = '19.0'
+    junitVersion = '4.12'
+    mockitoVersion = '1.10.19'
+    powerMockito = '1.6.2'
+    hamcrestVersion = '1.3'
 }

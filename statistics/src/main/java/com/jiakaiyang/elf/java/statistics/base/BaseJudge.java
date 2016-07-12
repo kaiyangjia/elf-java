@@ -8,6 +8,8 @@ import java.util.Collection;
 public class BaseJudge<T> implements Judge<T>{
     private T standard;
     private Collection<T> standardCollection;
+    //用于比较对象大小所依据的对象的成员名称
+    private String judgeField;
 
     public BaseJudge(T standard) {
         this.standard = standard;
@@ -35,6 +37,17 @@ public class BaseJudge<T> implements Judge<T>{
 
 
     public boolean largerThan(T a, T b) {
+        if(a instanceof Comparable
+                && a instanceof Comparable){
+            Comparable comparableA = (Comparable) a;
+            Comparable comparableB = (Comparable) b;
+
+            int result = comparableA.compareTo(comparableB);
+
+            return result > 0;
+        }else{
+
+        }
         return false;
     }
 

@@ -6,6 +6,17 @@ apply plugin: 'java'
 sourceCompatibility = 1.5
 
 
+sourceSets{
+    main.java.srcDirs = ['src/main/java']
+}
+
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+    // lib Dependencies
+    compile "com.google.guava:guava:$rootProject.guavaVersion"
+    compile "org.apache.commons:commons-lang3:$rootProject.commonsLang3Version"
+
+    // Dependencies for local unit tests
+    testCompile "junit:junit:$rootProject.ext.junitVersion"
+    testCompile "org.mockito:mockito-all:$rootProject.ext.mockitoVersion"
+    testCompile "org.hamcrest:hamcrest-all:$rootProject.ext.hamcrestVersion"
 }
