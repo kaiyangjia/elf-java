@@ -8,7 +8,7 @@ sourceSets{
     main.java.srcDirs = ['src/main/java']
 }
 
-dependencies {
+dependencies{
     // lib Dependencies
     compile "com.google.guava:guava:$rootProject.ext.guavaVersion"
     compile "org.apache.commons:commons-lang3:$rootProject.ext.commonsLang3Version"

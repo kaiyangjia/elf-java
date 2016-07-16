@@ -14,6 +14,12 @@ allprojects {
     }
 }
 
+
+dependencies{
+
+}
+
+
 // Define versions in a single place
 ext {
     //lib dependencies

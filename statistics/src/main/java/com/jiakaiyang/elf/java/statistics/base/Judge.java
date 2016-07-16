@@ -20,7 +20,12 @@ public interface Judge<T> {
     public boolean smallerThan(T a, T b);
 
 
-
+    /**
+     * 判断a 和 b是否相等,相等返回true,否则返回false
+     * @param a
+     * @param b
+     * @return
+     */
     public boolean equalWith(T a, T b);
 
 
