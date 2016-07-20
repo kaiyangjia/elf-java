@@ -1,14 +1,14 @@
 package com.jiakaiyang.elf.java.statistics.group;
 
 import com.jiakaiyang.elf.java.common.utils.InstanceUtils;
-import com.jiakaiyang.elf.java.statistics.base.ConditionImpl;
+import com.jiakaiyang.elf.java.statistics.condition.ConditionContract;
 
 import java.util.*;
 
 /**
  * 对一组数据（表现为一个java对象的集合）根据条件Condition进行分组。用户直接使用该类进行分组操作。该类是一个API提供类。具体的实现并不在该类里
  */
-public class BaseDataGrouper<T> implements GrouperContract<T>{
+public class SimpleDataGrouper<T> implements GrouperContract<T>{
 
     public static final String KEY_ACCEPT = "accept";
 
@@ -36,7 +36,7 @@ public class BaseDataGrouper<T> implements GrouperContract<T>{
         return result;
     }
 
-    public Map<Object, Collection> groupToMap(Collection<T> rawData, ConditionImpl<T> acceptConditionImpl) {
+    public Map<Object, Collection> groupToMap(Collection<T> rawData, ConditionContract<T> acceptConditionImpl) {
         Map<Object, Collection> result = new HashMap<Object, Collection>();
 
         Iterator<T> iterator = rawData.iterator();
@@ -62,7 +62,7 @@ public class BaseDataGrouper<T> implements GrouperContract<T>{
         return result;
     }
 
-    public List<Collection> groupToList(Collection<T> rawData, ConditionImpl<T> acceptConditionImpl) {
+    public List<Collection> groupToList(Collection<T> rawData, ConditionContract<T> acceptConditionImpl) {
         Map<Object, Collection> mapResult = groupToMap(rawData, acceptConditionImpl);
         List<Collection> result = new ArrayList<Collection>(mapResult.values());
         return result;
@@ -73,7 +73,7 @@ public class BaseDataGrouper<T> implements GrouperContract<T>{
         return mapResult.values();
     }
 
-    public Collection<Collection> groupToCollection(Collection<T> rawData, ConditionImpl<T> acceptConditionImpl) {
+    public Collection<Collection> groupToCollection(Collection<T> rawData, ConditionContract<T> acceptConditionImpl) {
         Map<Object, Collection> mapResult = groupToMap(rawData, acceptConditionImpl);
         return mapResult.values();
     }

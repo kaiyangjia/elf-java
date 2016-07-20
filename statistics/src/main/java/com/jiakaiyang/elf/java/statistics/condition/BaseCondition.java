@@ -1,4 +1,6 @@
-package com.jiakaiyang.elf.java.statistics.base;
+package com.jiakaiyang.elf.java.statistics.condition;
+
+import com.jiakaiyang.elf.java.statistics.base.BaseJudge;
 
 import java.util.Collection;
 

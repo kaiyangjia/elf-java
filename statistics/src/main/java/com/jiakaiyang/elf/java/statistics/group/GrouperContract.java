@@ -1,6 +1,6 @@
 package com.jiakaiyang.elf.java.statistics.group;
 
-import com.jiakaiyang.elf.java.statistics.base.ConditionImpl;
+import com.jiakaiyang.elf.java.statistics.condition.ConditionContract;
 
 import java.util.Collection;
 import java.util.List;
@@ -28,7 +28,7 @@ public interface GrouperContract<T> {
      * @param acceptConditionImpl 接受的条件
      * @return
      */
-    public Map<Object, Collection> groupToMap(Collection<T> rawData, ConditionImpl<T> acceptConditionImpl);
+    public Map<Object, Collection> groupToMap(Collection<T> rawData, ConditionContract<T> acceptConditionImpl);
 
 
     /**
@@ -49,7 +49,7 @@ public interface GrouperContract<T> {
      * @param acceptConditionImpl 接受的条件
      * @return
      */
-    public List<Collection> groupToList(Collection<T> rawData, ConditionImpl<T> acceptConditionImpl);
+    public List<Collection> groupToList(Collection<T> rawData, ConditionContract<T> acceptConditionImpl);
 
 
 
@@ -71,6 +71,6 @@ public interface GrouperContract<T> {
      * @param acceptConditionImpl 接受的条件
      * @return
      */
-    public Collection<Collection> groupToCollection(Collection<T> rawData, ConditionImpl<T> acceptConditionImpl);
+    public Collection<Collection> groupToCollection(Collection<T> rawData, ConditionContract<T> acceptConditionImpl);
 
 }

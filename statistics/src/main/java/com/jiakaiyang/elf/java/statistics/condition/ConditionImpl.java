@@ -1,4 +1,4 @@
-package com.jiakaiyang.elf.java.statistics.base;
+package com.jiakaiyang.elf.java.statistics.condition;
 
 /**
  * 条件的实现类，也是各种条件的基类
