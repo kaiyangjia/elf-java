@@ -1,17 +1,39 @@
 apply plugin: 'java'
 
-
 sourceSets{
     main.java.srcDirs = ['src/main/java']
 }
 
 dependencies{
     // lib Dependencies
-    compile "com.google.guava:guava:$rootProject.ext.guavaVersion"
-    compile "org.apache.commons:commons-lang3:$rootProject.ext.commonsLang3Version"
+}
 
-    // Dependencies for local unit tests
-    testCompile "junit:junit:$rootProject.ext.junitVersion"
-    testCompile "org.mockito:mockito-all:$rootProject.ext.mockitoVersion"
-    testCompile "org.hamcrest:hamcrest-all:$rootProject.ext.hamcrestVersion"
+publishing {
+    publications {
+        crud(MavenPublication) {
+            from components.java
+            groupId 'com.jiakaiyang'
+            artifactId 'elf-java-crud'
+            version '1.0'
+        }
+    }
+}
+
+bintray{
+    user = BINTRAY_USER
+    key = BINTRAY_API_KEY
+
+    publications = ['crud']
+    pkg{
+        repo = 'maven'
+        name = 'elf-java-crud'
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/kaiyangjia/elf-java'
+        version {
+            name = '1.0'
+            desc = 'the first version of elf-java-crud'
+            released  = new Date()
+            vcsTag = '1.0'
+        }
+    }
 }

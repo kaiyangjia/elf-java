@@ -9,11 +9,33 @@ sourceSets{
 dependencies{
     // lib Dependencies
     compile files('libs/lombok.jar')
-    compile "com.google.guava:guava:$rootProject.ext.guavaVersion"
-    compile "org.apache.commons:commons-lang3:$rootProject.ext.commonsLang3Version"
+}
 
-    // Dependencies for local unit tests
-    testCompile "junit:junit:$rootProject.ext.junitVersion"
-    testCompile "org.mockito:mockito-all:$rootProject.ext.mockitoVersion"
-    testCompile "org.hamcrest:hamcrest-all:$rootProject.ext.hamcrestVersion"
+publishing {
+    publications {
+        common(MavenPublication) {
+            from components.java
+            groupId 'com.jiakaiyang'
+            artifactId 'elf-java-common'
+            version '1.2'
+        }
+    }
+}
+
+bintray{
+    user = BINTRAY_USER
+    key = BINTRAY_API_KEY
+
+    publications = ['common']
+    pkg{
+        repo = 'maven'
+        name = 'elf-java-common'
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/kaiyangjia/elf-java'
+        version {
+            name = '1.1'
+            desc = 'the first version of elf-java-common'
+            released  = new Date()
+        }
+    }
 }
