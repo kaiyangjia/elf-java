@@ -2,24 +2,33 @@ apply plugin: 'java'
 
 sourceCompatibility = 1.5
 
+version=1.11
+
+//jar.archiveName = "statistics-${moduleVersion}-source.jar"
 
 sourceSets{
     main.java.srcDirs = ['src/main/java']
 }
 
+
 dependencies{
     compile project(':common')
 }
 
-
+task sourceJar(type: Jar) {
+    from sourceSets.main.allJava
+}
 
 publishing {
     publications {
         statistics(MavenPublication) {
-            from components.java
+//            from components.java
+            artifact sourceJar {
+                classifier "sources"
+            }
             groupId 'com.jiakaiyang'
             artifactId 'elf-java-statistics'
-            version '1.0'
+            version project.version
         }
     }
 }
@@ -35,10 +44,10 @@ bintray{
         licenses = ['Apache-2.0']
         vcsUrl = 'https://github.com/kaiyangjia/elf-java'
         version {
-            name = '1.0'
+            name = project.version
             desc = 'the first version of elf-java-statistics'
             released  = new Date()
-            vcsTag = '1.0'
+            vcsTag = project.version
         }
     }
 }

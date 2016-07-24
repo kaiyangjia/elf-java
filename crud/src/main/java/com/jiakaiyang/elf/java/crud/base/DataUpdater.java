@@ -1,4 +1,4 @@
-package com.jiakaiyang.elf.java.crud;
+package com.jiakaiyang.elf.java.crud.base;
 
 /**
  * Created by admin on 2016/7/11.

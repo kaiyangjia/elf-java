@@ -5,7 +5,8 @@ sourceSets{
 }
 
 dependencies{
-    // lib Dependencies
+    compile "com.querydsl:querydsl-sql:$rootProject.ext.querySQLVersion"
+    compile project(":common")
 }
 
 publishing {
