@@ -6,6 +6,7 @@ sourceSets{
 
 dependencies{
     compile "com.querydsl:querydsl-sql:$rootProject.ext.querySQLVersion"
+    compile "com.alibaba:druid:$rootProject.ext.druidVersion"
     compile project(":common")
 }
 
