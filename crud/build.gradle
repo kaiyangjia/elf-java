@@ -7,6 +7,8 @@ sourceSets{
 dependencies{
     compile "com.querydsl:querydsl-sql:$rootProject.ext.querySQLVersion"
     compile "com.alibaba:druid:$rootProject.ext.druidVersion"
+    compile "com.google.inject:guice:$rootProject.ext.guiceVersion"
+    compile "mysql:mysql-connector-java:$rootProject.ext.mysqlDriverVersion"
     compile project(":common")
 }
 

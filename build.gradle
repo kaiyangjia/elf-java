@@ -24,6 +24,10 @@ ext {
     guavaVersion = '19.0'
     querySQLVersion = '4.1.3'
     druidVersion = "1.0.9"
+    guiceVersion = "4.1.0"
+
+    //db draiver
+    mysqlDriverVersion = '6.0.3'
 
     //test lib
     junitVersion = '4.12'
