@@ -2,12 +2,14 @@ package com.jiakaiyang.elf.java.crud.read;
 
 
 
+import com.jiakaiyang.elf.java.crud.base.BaseRepository;
+
 import java.util.List;
 
 /**
  * DataGetter 的sql查询实现，用于获取关系型数据库中的数据
  */
-public class SQLDataGetter<T> implements DataGetter<T> {
+public class SQLDataGetter<T> extends BaseRepository<T> implements DataGetter<T> {
 
     @Override
     public List<T> get(T condition) {

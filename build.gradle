@@ -27,7 +27,8 @@ ext {
     guiceVersion = "4.1.0"
 
     //db draiver
-    mysqlDriverVersion = '6.0.3'
+    mysqlDriverVersion = '5.1.38'
+    postgresqlDriverVersion = '9.1-901.jdbc4'
 
     //test lib
     junitVersion = '4.12'
