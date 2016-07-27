@@ -1,16 +1,32 @@
 apply plugin: 'java'
 
+configurations {
+    querydslapt
+}
+
 sourceSets{
     main.java.srcDirs = ['src/main/java']
 }
 
 dependencies{
-    compile "com.querydsl:querydsl-sql:$rootProject.ext.querySQLVersion"
+    compile "com.querydsl:querydsl-sql:$rootProject.ext.queryDSLVersion"
+    compile "com.querydsl:querydsl-jpa:$rootProject.ext.queryDSLJpaVersion"
     compile "com.alibaba:druid:$rootProject.ext.druidVersion"
     compile "com.google.inject:guice:$rootProject.ext.guiceVersion"
     compile "mysql:mysql-connector-java:$rootProject.ext.mysqlDriverVersion"
     compile "postgresql:postgresql:$rootProject.ext.postgresqlDriverVersion"
     compile project(":common")
+}
+
+//Querydsl
+def generatedSrcDir = 'src/main/generated'
+task createGeneratedSrcDir << {
+    file(generatedSrcDir).mkdirs()
+}
+compileJava.dependsOn createGeneratedSrcDir
+
+compileJava {
+    options.compilerArgs << '-processor' << 'com.querydsl.apt.jpa.JPAAnnotationProcessor' << '-s' << file(generatedSrcDir).absolutePath
 }
 
 publishing {

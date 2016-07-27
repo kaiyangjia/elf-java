@@ -22,7 +22,8 @@ ext {
     //lib dependencies
     commonsLang3Version = '3.1'
     guavaVersion = '19.0'
-    querySQLVersion = '4.1.3'
+    queryDSLVersion = '4.1.3'
+    queryDSLJpaVersion = '4.1.3'
     druidVersion = "1.0.9"
     guiceVersion = "4.1.0"
 
